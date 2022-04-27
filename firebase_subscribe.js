@@ -28,7 +28,7 @@ function subscribe() {
           // получаем ID устройства
           messaging.getToken()
               .then(function (currentToken) {
-                  console.log(currentToken);
+                  // console.log(currentToken);
 
                   if (currentToken) {
                       sendTokenToServer(currentToken);
@@ -51,7 +51,7 @@ function subscribe() {
 function sendTokenToServer(currentToken) {
   if (!isTokenSentToServer(currentToken)) {
       console.log('Отправка токена на сервер...');
-  
+
       // var url = ''; // адрес скрипта на сервере который сохраняет ID устройства
       // $.post(url, {
       //   token: currentToken
