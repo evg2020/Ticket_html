@@ -22,7 +22,7 @@ function sendRequestToServer() {
     method: 'post',
     headers: {
       'ContentType': 'application/json',
-      'Authorization': key='AAAAFVvK2Ak:APA91bGFjpVYDRxQWDOimDq30VDKMXKH-A8Vot_tySKFpjpUvpfpBDuKE3wvp9gAVwwZhBlpTvDau_-6KaqecdBpZzD_VjYalY2lvKdCoOeKIAuuxz15VdaOq4y7GAxKwHTEpM7Uilr-'
+      'Authorization': 'AAAAFVvK2Ak:APA91bGFjpVYDRxQWDOimDq30VDKMXKH-A8Vot_tySKFpjpUvpfpBDuKE3wvp9gAVwwZhBlpTvDau_-6KaqecdBpZzD_VjYalY2lvKdCoOeKIAuuxz15VdaOq4y7GAxKwHTEpM7Uilr-'
 
     },
     body: JSON.stringify(request)
