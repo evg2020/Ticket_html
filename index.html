@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function () {
-              navigator.serviceWorker.register('sw.js')
-                  .then(function (registration) {
-                          // Registration was successful
-                          console.log('ServiceWorker registration successful with scope:', registration
-                              .scope);
-                      },
-                      function (err) {
-                          // registration failed :(
-                          console.log('ServiceWorker registration failed:', err);
-                      });
-          });
-      }
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js')
+          .then(function (registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope:', registration
+                .scope);
+            },
+            function (err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed:', err);
+            });
+      });
+    }
   </script>
 
 
@@ -120,8 +120,11 @@
           <div class="right_bar_heading">
             <div class="nav-toggle"><span></span></div>
             <Span class="nameClient">Taika</Span>
-            <a class="close" href="#" target="" rel=""><span class="arrow">&#10530</span>&nbsp<span
-                class="arrow">&#10006</span></a>
+
+            <!-- button for event subscription -->
+            <button type="button" id="subscribe" class="del_ticket buttom_line">Event subscription</button>
+
+            <a class="close" href="#" target="" rel=""><span class="arrow">⤢</span>&nbsp;<span class="arrow">✖</span></a>
           </div>
           <hr>
 
@@ -172,7 +175,10 @@
                 <div class="buttom_line_left col-7">
                   <button type="button" class=" del_ticket buttom_line">Reply</button>
                   &nbsp<button type="button" class=" del_ticket buttom_line">Reply to all</button>
-                  &nbsp<button type="button" class=" del_ticket buttom_line">Forward</button></div>
+                  &nbsp<button type="button" class=" del_ticket buttom_line">Forward</button>
+
+
+                </div>
               </div>
             </div>
           </div>
@@ -200,6 +206,10 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
   <script src="index.js"></script>
+
+  <!-- библиотеку Firebase -->
+  <script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+  <script type="text/javascript" src="/firebase_subscribe.js"></script>
 
 
 </body>
