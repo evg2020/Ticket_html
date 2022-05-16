@@ -5,5 +5,10 @@ window.addEventListener("DOMContentLoaded", () => {
       $('.left_bar').toggleClass('view');
     });
 })
+ const res = document.querySelector('#onSendMessage')
+ res.addEventListener('click', () => {
+   console.log('click');
+
+ })
 
 
