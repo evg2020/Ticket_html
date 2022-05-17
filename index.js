@@ -17,17 +17,20 @@ const APP_SECRET = '21d2692a71af5368eaa9adbff1cbdf6f';
 //   https://uapi.gravitec.net/api/v3/push
 
 async function postPost() {
-  const res = await fetch('https://uapi.gravitec.net/api/v3/push', {
+  const res = await fetch('https://api.gravitec.net/api/v3/push', {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json',
+      'Authorization': `Basic ${APP_KEY}`,
+      'Cache-Control': 'no-cache'
     },
     body: JSON.stringify(
       {
         "payload": {
           "message": " Test massage",
           "title": "Test message",
-          "redirect_url": "https://gravitec.net"
+          "redirect_url": "https://gravitec.net",
+
         }
       }
 
@@ -40,5 +43,4 @@ btnAdd.addEventListener('click', () => {
   postPost()
     .then(res => console.log(res))
     .catch(err => console.log(err))
-
 })
