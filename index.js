@@ -17,11 +17,11 @@ const APP_SECRET = '21d2692a71af5368eaa9adbff1cbdf6f';
 //   https://uapi.gravitec.net/api/v3/push
 
 async function postPost() {
-  const res = await fetch('https://api.gravitec.net/api/v3/push', {
+  const res = await fetch('https://uapi.gravitec.net/api/v3/push', {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${APP_KEY}`,
+      'Authorization': `${APP_KEY}`,
       'Cache-Control': 'no-cache'
     },
     body: JSON.stringify(
@@ -44,3 +44,27 @@ btnAdd.addEventListener('click', () => {
     .then(res => console.log(res))
     .catch(err => console.log(err))
 })
+
+
+let isPushEnabled = false;
+
+window.addEventListener('load', function() {
+    let pushButton = document.querySelector('.js-push-button');
+    pushButton.addEventListener('click', function() {
+    if (isPushEnabled) {
+        unsubscribe();
+    } else {
+        subscribe();
+    }
+    });
+
+    // Check that service workers are supported, if so, progressively
+    // enhance and add push messaging support, otherwise continue without it.
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(initialiseState);
+    } else {
+    console.warn('Service workers aren\'t supported in this browser.');
+    }
+});
+
