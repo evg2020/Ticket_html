@@ -24,7 +24,7 @@ async function postPost() {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `${APP_KEY}`,
-      'referer' : 'https://uapi.gravitec.net/api/v3/push'
+      'referer' : 'https://ticket-app-message.vercel.app/'
     },
     body: {
       "payload": {
