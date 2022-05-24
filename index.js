@@ -38,8 +38,8 @@ async function postPost() {
     }
   }, myInit);
 
- const result= await fetch(myRequest).then(function (response) {
-    return response.json()
+ const result = await fetch(myRequest).then(function (response) {
+    return response.data
   })
    return result
 
