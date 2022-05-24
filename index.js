@@ -24,6 +24,7 @@ async function postPost() {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `${APP_KEY}`,
+      referer : 'https://uapi.gravitec.net/api/v3/push'
     },
     body: {
       "payload": {
@@ -32,7 +33,7 @@ async function postPost() {
         "redirect_url": "https://gravitec.net",
       }
     },
-    mode: 'cors',
+    mode: 'no-cors',
     cache: 'default'
   };
 
