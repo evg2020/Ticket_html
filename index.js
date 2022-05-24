@@ -21,7 +21,7 @@ const APP_SECRET = '21d2692a71af5368eaa9adbff1cbdf6f';
 //   const myHeaders = new Headers();
 //   const myInit = {
 //     method: 'POST',
-//     headers: {
+//     myHeaders: {
 //       'Content-Type': 'application/json',
 //       'Authorization': `${APP_KEY}`,
 //       'referer': 'https://ticket-app-message.vercel.app',
@@ -49,20 +49,20 @@ const APP_SECRET = '21d2692a71af5368eaa9adbff1cbdf6f';
 // }
 
 async function postPost() {
-  let headers = new Headers();
+  let myHeaders = new Headers();
 
-  headers.append('Content-Type', 'application/json');
-  headers.append('Accept', 'application/json');
-  headers.append('Authorization', `Basic MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY6MzFjY2Y5YzE4ZjM5NjI2
+  myHeaders.append('Content-Type', 'application/json');
+  myHeaders.append('Accept', 'application/json');
+  myHeaders.append('Authorization', `Basic MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY6MzFjY2Y5YzE4ZjM5NjI2
   NDEyYmM0Y2VhOGZkOTFmODk=:MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY6MzFjY2Y5YzE4ZjM5NjI2
   NDEyYmM0Y2VhOGZkOTFmODk=` );
-  headers.append('Origin', 'https://ticket-app-message.vercel.app');
+  myHeaders.append('Origin', 'https://ticket-app-message.vercel.app');
 
   fetch(url , {
       mode: 'cors',
       credentials: 'include',
       method: 'POST',
-      headers: headers,
+      headers: myHeaders,
       body: {
         "payload": {
           "message": " Test massage",
