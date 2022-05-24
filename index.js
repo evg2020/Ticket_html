@@ -53,7 +53,7 @@ async function postPost() {
 
   myHeaders.append('Content-Type', 'application/json');
   myHeaders.append('Accept', 'application/json');
-  myHeaders.append('Authorization', 'MzFjY2Y5YzE4ZjM5NjI2NDEyYmM0Y2VhOGZkOTFmODk6MjFkMjY5MmE3MWFmNTM2  OGVhYTlhZGJmZjFjYmRmNmY=');
+  myHeaders.append('Authorization', 'MzFjY2Y5YzE4ZjM5NjI2NDEyYmM0Y2VhOGZkOTFmODk6MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY=');
   myHeaders.append('Origin', 'https://ticket-app-message.vercel.app');
 
   fetch(url , {
@@ -63,16 +63,15 @@ async function postPost() {
       headers: myHeaders,
       body: {
         "payload": {
-          "message": " Test massage",
+          "message": "Test massage",
           "title": "Test message",
-          "redirect_url": "https://gravitec.net",
+          "redirect_url": "https://gravitec.net"
         }
-      },
-
+      }
     })
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(error => console.log('Authorization failed: ' + error.message));
+    .catch(error => console.log(error.message));
 }
 btnAdd.addEventListener('click', () => {
   postPost()
