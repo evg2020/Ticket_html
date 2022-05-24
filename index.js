@@ -27,7 +27,8 @@ async function postPost() {
       'referer': 'https://ticket-app-message.vercel.app',
       'Origin' : 'https://ticket-app-message.vercel.app',
       'Access-Control-Request-Method': 'POST,GET,OPTION',
-      'Access-Control-Request-Headers': 'Content-Type'
+      'Access-Control-Request-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*'
     },
     body: {
       "payload": {
