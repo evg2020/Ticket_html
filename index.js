@@ -24,7 +24,7 @@ async function postPost() {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `${APP_KEY}`,
-      'referer' : 'https://ticket-app-message.vercel.app/'
+      'referer' : 'https://ticket-app-message.vercel.app'
     },
     body: {
       "payload": {
