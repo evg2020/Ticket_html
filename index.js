@@ -24,7 +24,7 @@ async function postPost() {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `${APP_KEY}`,
-      'Cache-Control': 'no-cache'
+      
     },
     body: {
       "payload": {
@@ -33,7 +33,7 @@ async function postPost() {
         "redirect_url": "https://gravitec.net",
       }
     },
-    mode: 'no-cors',
+    mode: 'cors',
     cache: 'default'
   };
 
