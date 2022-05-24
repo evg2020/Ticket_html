@@ -24,7 +24,6 @@ async function postPost() {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `${APP_KEY}`,
-      
     },
     body: {
       "payload": {
