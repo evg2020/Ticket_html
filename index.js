@@ -16,39 +16,64 @@ const APP_SECRET = '21d2692a71af5368eaa9adbff1cbdf6f';
 //   -H "Content-Type: application/json" \
 //   https://uapi.gravitec.net/api/v3/push
 
+// async function postPost() {
+
+//   const myHeaders = new Headers();
+//   const myInit = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': `${APP_KEY}`,
+//       'referer': 'https://ticket-app-message.vercel.app',
+//       'Origin' : 'https://ticket-app-message.vercel.app',
+//       'Access-Control-Request-Methods': 'POST',
+//       'Access-Control-Request-Headers': 'Content-Type,Authorization',
+//       'Access-Control-Allow-Origin': 'https://ticket-app-message.vercel.app'
+//     },
+//     body: {
+//       "payload": {
+//         "message": " Test massage",
+//         "title": "Test message",
+//         "redirect_url": "https://gravitec.net",
+//       }
+//     },
+//     cache: 'default'
+//   };
+
+//   const myRequest = new Request('https://uapi.gravitec.net/api/v3/push', myInit);
+
+//   const result = await fetch(myRequest).then(function (response) {
+//     return response.data
+//   })
+//   return result
+// }
+
 async function postPost() {
+  let headers = new Headers();
 
-  const myHeaders = new Headers();
-  const myInit = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `${APP_KEY}`,
-      'referer': 'https://ticket-app-message.vercel.app',
-      'Origin' : 'https://ticket-app-message.vercel.app',
-      'Access-Control-Request-Methods': 'POST',
-      'Access-Control-Request-Headers': 'Content-Type,Authorization',
-      'Access-Control-Allow-Origin': 'https://ticket-app-message.vercel.app'
-    },
-    body: {
-      "payload": {
-        "message": " Test massage",
-        "title": "Test message",
-        "redirect_url": "https://gravitec.net",
-      }
-    },
-    cache: 'default'
-  };
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+  headers.append('Authorization', 'Basic ' + base64.encode(APP_SECRET + ":" + APP_KEY));
+  headers.append('Origin', 'https://ticket-app-message.vercel.app');
 
-  const myRequest = new Request('https://uapi.gravitec.net/api/v3/push', myInit);
+  fetch(url , {
+      mode: 'cors',
+      credentials: 'include',
+      method: 'POST',
+      headers: headers,
+      body: {
+        "payload": {
+          "message": " Test massage",
+          "title": "Test message",
+          "redirect_url": "https://gravitec.net",
+        }
+      },
 
-  const result = await fetch(myRequest).then(function (response) {
-    return response.data
-  })
-  return result
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(error => console.log('Authorization failed: ' + error.message));
 }
-
-
 btnAdd.addEventListener('click', () => {
   postPost()
     .then(res => console.log(res))
