@@ -33,7 +33,6 @@ async function postPost() {
         "redirect_url": "https://gravitec.net",
       }
     },
-    mode: 'no-cors',
     cache: 'default'
   };
 
@@ -43,7 +42,6 @@ async function postPost() {
     return response.data
   })
   return result
-
 }
 
 
