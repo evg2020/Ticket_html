@@ -26,8 +26,8 @@ async function postPost() {
       'Authorization': `${APP_KEY}`,
       'referer': 'https://ticket-app-message.vercel.app',
       'Origin' : 'https://ticket-app-message.vercel.app',
-      'Access - Control - Request - Method': 'POST, GET, OPTION',
-      'Access - Control - Request - Headers': 'X-PINGOTHER, Content-Type'
+      'Access - Control - Request - Method': 'POST,GET,OPTION',
+      'Access - Control - Request - Headers': 'X-PINGOTHER,Content-Type'
     },
     body: {
       "payload": {
