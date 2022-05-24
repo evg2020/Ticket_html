@@ -53,7 +53,9 @@ async function postPost() {
 
   headers.append('Content-Type', 'application/json');
   headers.append('Accept', 'application/json');
-  headers.append('Authorization', 'Basic ' + base64.encode(APP_SECRET + ":" + APP_KEY));
+  headers.append('Authorization', `Basic MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY6MzFjY2Y5YzE4ZjM5NjI2
+  NDEyYmM0Y2VhOGZkOTFmODk=:MjFkMjY5MmE3MWFmNTM2OGVhYTlhZGJmZjFjYmRmNmY6MzFjY2Y5YzE4ZjM5NjI2
+  NDEyYmM0Y2VhOGZkOTFmODk=` );
   headers.append('Origin', 'https://ticket-app-message.vercel.app');
 
   fetch(url , {
