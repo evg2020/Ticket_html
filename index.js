@@ -57,7 +57,7 @@ async function postPost() {
   myHeaders.append('Origin', 'https://ticket-app-message.vercel.app');
 
   fetch(url , {
-      mode: 'cors',
+      mode: 'no-cors',
       credentials: 'include',
       method: 'POST',
       headers: myHeaders,
