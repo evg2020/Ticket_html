@@ -26,22 +26,23 @@ async function postPost() {
       'Authorization': `${APP_KEY}`,
       'Cache-Control': 'no-cache'
     },
+    body: {
+      "payload": {
+        "message": " Test massage",
+        "title": "Test message",
+        "redirect_url": "https://gravitec.net",
+      }
+    },
     mode: 'no-cors',
     cache: 'default'
   };
 
-  const myRequest = new Request({
-    "payload": {
-      "message": " Test massage",
-      "title": "Test message",
-      "redirect_url": "https://gravitec.net",
-    }
-  }, myInit);
+  const myRequest = new Request('https://uapi.gravitec.net/api/v3/push', myInit);
 
- const result = await fetch(myRequest).then(function (response) {
+  const result = await fetch(myRequest).then(function (response) {
     return response.data
   })
-   return result
+  return result
 
 }
 
